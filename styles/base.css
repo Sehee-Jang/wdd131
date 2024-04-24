@@ -1,6 +1,13 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
 /* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
@@ -61,22 +68,53 @@ main {
 }
 
 .card {
-    margin: 0 10px;
+    margin-left: 40px;
     background-color: #fff;
-    padding: 20px;
+    /* padding: 40px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.korea {
+.card:last-child{
+    margin-right: 40px;
+}
+
+.card-cont {
+    padding: 40px;
+}
+
+.card h2 {
+    text-align: center;
+    background-color: #fcc500;
+    padding: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px
+}
+
+.about, .korea {
     display: grid;
     grid-template: auto 1fr auto;
+}
+
+.about .about-desc {
+    grid-column: 1 / 2;
+    padding: 8px;
+}
+
+.about .about-img {
+    grid-column: 2 / 3;
+}
+
+.korea {
+    margin-top: 20px;
 }
 
 .korea h3 {
     text-align: center;
     grid-column: 1 / 3;
+    padding: 20px;
 }
+
 .korea .img{
     grid-column: 1 / 2;
 }
