@@ -1,0 +1,269 @@
+<!--JavaScript: Fundamental Programming Constructs-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <main>
+        <ul class="check">
+            <li><strong>Conditional Statements</strong>:
+                <ul>
+                    <li>
+                        <code>if</code> statement: Executes a block of code if a specified condition is true.
+                        <pre>
+                            <code class="javascript hljs language-javascript"><span class="hljs-keyword">if</span> (condition) {
+                            <span class="hljs-comment">// Code to execute if the condition is true</span>
+                            }</code>
+                        </pre>
+                        <div class="callout info">
+                          The condition is evaluated to a <strong>boolean</strong>
+                          value, i.e., true or false.
+                          Writing condition
+                          statements is a critical skill in programming. The use of <a href="../resources/javascript-operators.html">operators</a> and expressions is a key
+                          concept in writing condition statements that solve programming problems.
+                        </div>
+                    </li>
+                    <li>
+                        <code>else</code> statement: Provides an alternative block of code to execute if the condition
+                        in the if statement is false.
+                        <pre>
+                            <code class="javascript hljs language-javascript"><span class="hljs-keyword">if</span> (condition) {
+                                <span class="hljs-comment">// Code to execute if the condition is true</span>
+                            } <span class="hljs-keyword">else</span> {
+                                <span class="hljs-comment">// Code to execute if the condition is false</span>
+                            }
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        <code>else if</code> statement: This structure allows for the checking of multiple conditions in sequence.
+                        <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">if</span> (condition1) {
+                                <span class="hljs-comment">// Code to execute if condition1 is true</span>
+                            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (condition2) {
+                                <span class="hljs-comment">// Code to execute if condition2 is true</span>
+                            } <span class="hljs-keyword">else</span> {
+                                <span class="hljs-comment">// Code to execute if none of the conditions are true</span>
+                            }
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Switch Statements</strong>: Provides a way to execute selective blocks of code based on the value of an expression.
+                <pre>
+                    <code class="javascript hljs language-javascript"><span class="hljs-keyword">switch</span> (expression) {
+                        <span class="hljs-keyword">case</span> <span class="hljs-attr">value1</span>:
+                        <span class="hljs-comment">// Code to execute if expression is equal to value1</span>
+                        <span class="hljs-keyword">break</span>;
+                        <span class="hljs-keyword">case</span> <span class="hljs-attr">value2</span>:
+                        <span class="hljs-comment">// Code to execute if expression is equal to value2</span>
+                        <span class="hljs-keyword">break</span>;
+                        <span class="hljs-comment">// ... more cases ...</span>
+                        <span class="hljs-attr">default</span>:
+                        <span class="hljs-comment">// Code to execute if none of the cases match</span>
+                    }
+                    </code>
+                </pre>
+            </li>
+
+            <li>
+                <strong>Looping Statements</strong>:
+                <ul>
+                    <li>
+                        <code>for</code> Loop: Repeats a block of coe a specified number of times.
+                        <pre>
+                            <code class="javascript hljs language-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">19</span>; i++) {
+                                <span class="hljs-comment">// Code to execute in each iteration</span>
+                            }
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        <code>while</code> Loop: Repeats a block of code as long as a specified condition is true.
+                        <pre>
+                            <code class="javascript hljs language-javascript"><span class="hljs-keyword">while</span> (condition) {
+                                <span class="hljs-comment">// Code to execute while the condition is true</span>
+                            }
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        <code>forEach</code> Loop: This loop structure is for <strong>arrays</strong>. It iterates over each element of the array.
+                        <pre>
+                            <code class="javascript hljs language-javascript">array.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>) {
+                                <span class="hljs-comment">// Code to execute for each element</span>
+                            });
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
+
+<style>
+   
+body {
+  font: 400 16px / 1.5 Montserrat, Helvetica, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+ol ol,
+ul ul {
+  margin-top: 1rem;
+  /* override default */
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+li ul li:nth-child(1) {
+  margin-top: 0.5rem;
+}
+
+li ul li,
+li ol li {
+  margin-bottom: 0.5rem;
+}
+
+li p {
+  margin: 0;
+}
+
+
+header {
+  background-color: var(--byuiblue);
+  padding: 0.5rem;
+}
+
+main {
+  margin: 1.5rem 1rem;
+}
+
+footer {
+  border-top: var(--bord);
+  font-size: smaller;
+  background-color: var(--lightgray);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0 0 0 0.5rem;
+}
+
+.html,
+.css,
+.javascript,
+.cli {
+  font-weight: 400;
+  padding: .75rem;
+}
+
+.callout {
+  margin: 1rem;
+  border: var(--bord);
+  padding: 0.5rem;
+  color: #000;
+}
+
+.check {
+  list-style: '☑️ ';
+}
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/
+pre code.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 1em
+}
+
+code.hljs {
+    padding: 3px 5px
+}
+
+.hljs {
+    background: #f3f3f3;
+    color: #444;
+}
+
+.hljs-comment {
+    color: #697070
+}
+
+.hljs-punctuation,.hljs-tag {
+    color: #444a
+}
+
+.hljs-tag .hljs-attr,.hljs-tag .hljs-name {
+    color: #444
+}
+
+.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag {
+    font-weight: 700
+}
+
+.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type {
+    color: #800
+}
+
+.hljs-section,.hljs-title {
+    color: #800;
+    font-weight: 700
+}
+
+.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable {
+    color: #ab5656
+}
+
+.hljs-literal {
+    color: #695
+}
+
+.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code {
+    color: #397300
+}
+
+.hljs-meta {
+    color: #1f7199
+}
+
+.hljs-meta .hljs-string {
+    color: #38a
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: 700
+}
+
+</style>
