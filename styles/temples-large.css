@@ -5,15 +5,18 @@
         justify-content: space-between;
         /* max-width: 860px; */
     }
+
+    #menu {
+        display: none; /*Hide hamburger button*/
+    }
+
     .navigation {
         justify-content: flex-end;
         flex-direction: row;
     }
-    .navigation a {
-        flex: 1 1 100%;
-    }
 
-    menu {
-        display: none;
+    .navigation a {
+        display: block;
+        flex: 1 1 100%;
     }
 }
