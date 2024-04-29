@@ -1,0 +1,86 @@
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: orange;
+    display: grid;
+    grid-gap: 1rem;
+    padding: 20px;
+}
+
+header, main {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+#menu::before {
+    content:"☰";
+}
+
+#menu.open::before{
+    content: "❌";
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: .5rem;
+}
+
+.navigation a:hover {
+    text-decoration: overline;
+}
+
+.active {
+    color: #000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 25px;
+    place-items: center;
+}
+
+/* When the button is clicked */
+.open a{
+    display: block;
+}
+
+.active::before{
+
+}
