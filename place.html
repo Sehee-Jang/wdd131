@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD131 | W03 Assignment</title>
+    <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
+    <meta name="author" content="Sehee Jang">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+    <script defer src="scripts/getdates.js"></script>
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>South Korea</h1>
+        <div class="hero">
+            <picture>
+                <source srcset="images/place/seoul-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/place/seoul-medium.webp" media="(min-width: 500px)">
+                <img src="images/place/seoul-small.webp" alt="Seoul Landscape" width="500" height="250">
+            </picture>
+        </div>
+    </header>
+
+    <main>
+        <section class="data">
+            <h2>Data</h2>
+            <div class="datatable">
+                <div class="row">
+                    <div class="col bold">Area: </div>
+                    <div class="col">100,210 sq km</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Population: </div>
+                    <div class="col">51,741,963</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Capital: </div>
+                    <div class="col">Seoul</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Languages: </div>
+                    <div class="col">Korean</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Currency: </div>
+                    <div class="col">won (₩KRW)</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Time Zone: </div>
+                    <div class="col">UTC+9</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Calling Code: </div>
+                    <div class="col">+82</div>
+                </div>
+                <div class="row">
+                    <div class="col bold">Internet TLD: </div>
+                    <div class="col">.kr</div>
+                </div>
+            </div>
+        </section>
+        <section class="weather">
+            <h2>Weather</h2>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;<span class="currentyear"></span> Sehee Jang, South Korea</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+</body>
+</html>
