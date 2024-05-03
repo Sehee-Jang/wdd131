@@ -53,7 +53,6 @@ h2, h3 {
 .datatable .row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: left;
     text-align: left;
 }
 
