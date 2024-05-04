@@ -116,10 +116,11 @@ footer {
         top: 60%;
         right: 1rem;
     }
-
+    
     .weather-icon::after {
         content: "⛅";
     }
+
     section:last-child {
         border-top: none;
     }
