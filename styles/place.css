@@ -1,5 +1,6 @@
 :root {
     --primary-color: #007bff;
+    --second-color: #222;
 }
 
 *,
@@ -42,7 +43,7 @@ h1 {
     padding: 20px;
     text-align: center;
     background: #eee;
-    color: #222;
+    color: var(--second-color);
 }
 
 h2, h3 {
