@@ -1,3 +1,7 @@
+:root {
+    --primary-color: #007bff;
+}
+
 *,
 *::before,
 *::after {
@@ -98,7 +102,8 @@ footer {
 
     section h2 {
         text-align: left;
-        background: #0022e2;
+        background: var(--primary-color);
+        /* background: #0022e2; */
         padding: 10px;
         margin-bottom: 10px;
         color: #fff;
@@ -113,8 +118,8 @@ footer {
         right: 1rem;
     }
 
-    .weather .emoji {
-        
+    .weather-icon::after {
+        content: "⛅";
     }
     section:last-child {
         border-top: none;
