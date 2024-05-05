@@ -71,6 +71,7 @@ h2, h3 {
 section {
     margin: 0 auto;
     padding: 20px;
+    text-align: center;
 }
 
 .bold {
@@ -113,12 +114,17 @@ footer {
     }
 
     .weather{
-        top: 60%;
+        top: 50%;
         right: 1rem;
     }
+
+    .weather img{
+        display: none;
+    }
     
-    .weather-icon::after {
-        content: "⛅";
+    .weather h2::after {
+        content: " ⛅";
+        font-size:  1em;
     }
 
     section:last-child {
