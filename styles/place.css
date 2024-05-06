@@ -1,6 +1,8 @@
 :root {
-    --primary-color: #007bff;
-    --second-color: #222;
+    --primary-color: #ffcc00;
+    --header-color: #0025aa;
+    --header-font-color: #fff;
+    --cotent-font-folor: #222;
     --footer-color: #333;
 }
 
@@ -23,6 +25,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 main {
@@ -43,8 +46,8 @@ h1 {
     font-size: 2rem;
     padding: 20px;
     text-align: center;
-    background: #eee;
-    color: var(--second-color);
+    background: var(--header-color);
+    color: var(--header-font-color);
 }
 
 h2, h3 {
@@ -106,7 +109,7 @@ footer {
         /* background: #0022e2; */
         padding: 10px;
         margin-bottom: 10px;
-        color: #fff;
+        color: var(--cotent-font-folor);
     }
     .data{
         top: 20%;
