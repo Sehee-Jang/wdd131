@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods for Functional Programming</title>
+</head>
+<body>
+    <main class="page">
+        <h2>Array Methods for Functional Programming</h2>
+        <h3>Overview</h3>
+        <p>Functional programming is a programming paradigm that treats computation as the evaluation of
+          mathematical functions and avoids changing-state and mutable data. It is a declarative
+          programming paradigm, which means programming is done with expressions or declarations instead
+          of statements. Array methods that support functional programming include
+          <code>filter()</code>, <code>map()</code>, and <code>reduce()</code>. There are other array
+          methods that support functional programming, but this learning activity dives into these three
+          common and useful methods.
+        </p>
+    
+        <details class="clo">
+          <summary><strong>Course Learning Outcomes</strong></summary>
+          <ol>
+            <li>Demonstrate proficiency with JavaScript language syntax.</li>
+            <li>Use JavaScript to respond to events and dynamically modify HTML.</li>
+          </ol>
+        </details>
+    
+        <h3>Prepare</h3>
+        <h4>array.filter()</h4>
+        <p>The array.filter() method creates a filtered array from the original array using the
+          condition from the provided
+          function.</p>
+        <ul>
+          <li>Reference <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">Array.filter()</a> - MDN Web Docs</li>
+        </ul>
+    
+        <h4>array.map()</h4>
+        <p>The array.map() method iterates through each element of the original array using a given
+          function and produces a
+          new array.
+          The original array is not modified. The new array is returned by the map() method. The new
+          array
+          will have the same number of elements as the original array.</p>
+    
+        <ul>
+          <li>Reference <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="noopener">Array.map()</a> - MDN Web Docs</li>
+        </ul>
+    
+        <h4>array.reduce()</h4>
+        <p>The array.reduce() method is used to reduce the array to a single value. It executes a reducer function on each
+          element of the array, resulting in a single output value. The reducer function takes four arguments: Accumulator,
+          Current Value, Current Index, Source Array. The reducer function's returned value is assigned to the accumulator,
+          whose value is remembered across each iteration throughout the array and ultimately becomes the final, single
+          resulting value.</p>
+    
+        <ul>
+          <li>Reference <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">Array.reduce()</a> - MDN Web Docs</li>
+        </ul>
+    
+        <h3>Check Your Understanding</h3>
+        <p>For all of these exercises, use this array declaration:</p>
+        <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">let</span> names = [<span class="hljs-string">'Nancy'</span>,<span class="hljs-string">'Blessing'</span>,<span class="hljs-string">'Jorge'</span>,<span class="hljs-string">'Svetlana'</span>,<span class="hljs-string">'Bob'</span>];</code></pre>
+        <ul class="check">
+          <li>Using the <em><code>array.filter()</code></em> method, create an array named
+            <code>namesB</code> with
+            <strong>only</strong> those names from the <code>name</code> array that start with the
+            character 'B'.
+            <details open="">
+              <summary>Answer</summary>
+              <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">let</span> namesB = names.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> name.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>) === <span class="hljs-string">'B'</span>);</code></pre>
+            </details>
+          </li>
+    
+          <li>Using the <em><code>array.map()</code></em> method, create a new array named
+            <code>namesLength</code> that
+            contains the length of each name in the <code>names</code> array. Expected output is
+            <code>[5, 8, 5, 8, 3]</code>.
+            <details open="">
+              <summary>Answer</summary>
+              <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">let</span> nameLengths = names.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> name.<span class="hljs-property">length</span>);</code></pre>
+            </details>
+          </li>
+    
+          <li>Using the <em><code>names.reduce()</code></em> method, create an expression that returns
+            the <strong>average
+              string length</strong> of the names in the <code>names</code> array. Expected output is
+            <code>5.8</code>.
+            <details open="">
+              <summary>Answer</summary>
+              <pre><code class="javascript hljs language-javascript">names.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">total, name</span>) =&gt;</span> total + name.<span class="hljs-property">length</span>, <span class="hljs-number">0</span>) / names.<span class="hljs-property">length</span>;</code></pre>
+              <p>The initial value of the reduction is set to 0. Inside the reducer function, total
+                represents the accumulated sum of string lengths, and name represents each individual name in the
+                array. The reducer function adds the length of each name to the total in each iteration. (like any
+                accumulator, total += name.length).</p>
+            </details>
+          </li>
+          <li>Complete this ponder activities: <a href="https://byui-cit.github.io/learning-modules/modules/js/array-methods/ponder1/" target="_blank" rel="noopener">Practice
+              with Array methods</a> - WDD Learning Modules</li>
+        </ul>
+    
+        <hr>
+        <nav>
+          <span><a href="index.html">Back</a></span>
+        </nav>
+      </main>
+</body>
+</html>
