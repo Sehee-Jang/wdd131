@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading</title>
+    <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
+    <meta name="author" content="Sehee Jang">
+</head>
+<body>
+    <header>
+        <h1>Lazy Loading</h1>
+    </header>
+    <main>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quae blanditiis, illo voluptatum rerum fuga officiis temporibus sapiente eveniet ipsam totam provident vel maiores amet molestias ex veritatis explicabo facilis hic, commodi a quia cum. Libero, nisi! Ratione dolor distinctio eos placeat quaerat officiis fugit vero aperiam perferendis quibusdam accusamus ex molestiae, voluptas aliquam veniam aliquid, debitis iure aspernatur obcaecati nemo sint quam! Non excepturi expedita nam odit, explicabo vero maxime sit quia accusantium sed eum ipsam vitae vel quam dolorum officia eaque dolorem dicta facilis recusandae necessitatibus ut ad magnam hic. Maiores voluptatem tempora amet ullam exercitationem at, deserunt, quis quibusdam, ratione ipsam tempore aliquam commodi? Non cupiditate sequi rem ducimus? Assumenda inventore tempore voluptates dolore, possimus ipsa commodi maiores praesentium nihil ab? Vitae, numquam repellat maiores iusto, laboriosam, ut amet esse dignissimos eius doloribus suscipit nihil earum alias facere quaerat ullam expedita voluptatibus repellendus adipisci eos ducimus. Laboriosam praesentium quisquam eveniet dolore vel tempora fugiat, cumque hic quod ipsam in neque non rem sapiente. Totam porro quibusdam accusamus et tempore, doloremque inventore ullam delectus quasi earum ad atque? Fugiat explicabo facere consequatur saepe? Ab iusto ratione itaque aliquam consequuntur quia harum sunt fuga dolores! Porro, facere. Cupiditate voluptatibus error, quisquam fugit accusamus consequuntur laboriosam. Recusandae veritatis eaque error eveniet autem? Veritatis debitis iure, deserunt neque velit atque dignissimos dolores earum eligendi aliquid? Doloremque accusamus asperiores excepturi qui animi, eligendi magni, consectetur quos quia ipsa minus facilis expedita provident deserunt! Cumque maiores enim aliquid assumenda possimus facilis laborum repellendus, veniam amet veritatis iure placeat, expedita voluptates repudiandae soluta praesentium recusandae nostrum vero dolorum vitae dolores. Maiores ipsam, placeat deserunt, dolorum sed ad repellat mollitia atque consequuntur perspiciatis dolorem at cupiditate! Cupiditate eum fuga unde odit ratione obcaecati aperiam eaque ut quae quas mollitia ipsam nisi numquam voluptate vero nulla veniam odio quibusdam sapiente enim, qui perferendis animi. Facilis sapiente, eaque, odit natus fugiat tempore, magni autem rerum libero tenetur quasi! Qui modi ratione culpa neque quam! Exercitationem accusantium harum minus, perspiciatis unde dicta hic! Vitae, doloribus. Rem explicabo, non earum est esse libero reiciendis ea facilis voluptas corrupti sint eaque inventore expedita qui architecto quos possimus mollitia, ad debitis. Nemo, commodi aspernatur iure, quod illo quia optio iusto laborum ratione, adipisci beatae eum cupiditate tenetur sunt mollitia voluptatem cumque corrupti quidem incidunt quae nobis quo. Dignissimos, consectetur facilis reprehenderit quisquam omnis vitae quidem dolor enim veniam accusamus ipsam ullam eaque excepturi perspiciatis nesciunt ex aliquam nisi dolore id cupiditate! Nisi facilis asperiores similique quibusdam eveniet optio nulla quo. Nesciunt architecto aliquid, placeat libero rem voluptatibus, quia, rerum quibusdam facere sequi ex consectetur minus porro consequuntur alias facilis earum error animi. Est error soluta provident earum totam! Harum perferendis inventore ducimus at cupiditate, itaque atque. Provident iure pariatur assumenda nam voluptatum perferendis natus, harum cum quisquam fuga ipsum quibusdam, earum suscipit ducimus! Consequuntur nam delectus soluta quod optio, quisquam fugiat incidunt dignissimos culpa est sunt inventore perferendis ullam tenetur beatae in repellat accusamus facere quos dolorum ducimus! Placeat, reprehenderit numquam.</p>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+        <picture><img src="https://cdn.gemstatemedia.com/sites/thepaulcushing/2024/04/pursuit.png" alt="Placeholder Kitten Image" loading="lazy" width="400" height="600"></picture>
+    </main>
+    <footer>
+        <p>&copy;<span class="currentyear"></span> Sehee Jang, South Korea</p>
+    </footer>
+</body>
+
+<style>
+    h1 {
+        text-align: center;
+    }
+    main {
+        margin: 0 auto;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+        background-color: #000;
+        animation: fade 15s;
+    }
+
+    @keyframes fade{
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+</style>
+</html>

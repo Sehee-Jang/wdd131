@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables for Data Presentation</title>
+    <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
+    <meta name="author" content="Sehee Jang">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">ACME Wildwest Service</th>
+            </tr>
+            <tr>
+                <td class="blank"></td>
+                <th>Basic</th>
+                <th>Premium</th>
+                <th>Deluxe</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Feature 1</th>
+                <td>✔️</td>
+                <td>✔️</td>
+                <td>✔️</td>
+            </tr>
+            <tr>
+                <th>Feature 2</th>
+                <td>❌</td>
+                <td>✔️</td>
+                <td>✔️</td>
+            </tr>
+            <tr>
+                <th>Feature 3</th>
+                <td>❌</td>
+                <td>❌</td>
+                <td>✔️</td>
+            </tr>
+        </tbody>
+        <caption>Table 1 : Account Feature Comparison</caption>
+    </table>
+</body>
+
+<style>
+    table {
+        width: 400px;
+        border: 1px solid #a7a7a7;
+        border-collapse: collapse;
+    }
+
+    caption {
+        caption-side: bottom;
+        font-size: smaller;
+        padding: .2rem;
+    }
+
+    tbody th,
+    tbody td {
+        padding: .5em 1rem;
+        border: 1px solid #a7a7a7;
+        border-top: none;
+        white-space: pre;
+    }
+
+
+    thead th,
+    tbody td{
+        text-align: center;
+    }
+
+    thead{
+        color: #fff;
+        background-color: #000;
+    }
+
+    th {
+        padding: 1rem;
+        font-size: larger;
+    }
+
+    tr:nth-last-child(1){
+        background-color: #333;
+    }
+
+    tbody tr:nth-child(even){
+        background-color: #eee;
+    }
+
+    .blank {
+        background-color: #000;
+    }
+</style>
+</html>
