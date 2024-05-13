@@ -1,4 +1,6 @@
-*  {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,6 +20,7 @@ a {
     text-decoration: none;
 }
 
+/* Header */
 header {
     background-color: skyblue;
     display: grid;
@@ -25,19 +28,10 @@ header {
     padding: 20px;
 }
 
-header, main {
-    margin: 0 auto;
-}
-
 h1 {
     font-size: 2rem;
 }
 
-h2 {
-    margin: auto;
-    text-align: center;
-    padding: 25px;
-}
 #menu {
     font-size: 2rem;
     font-weight: 700;
@@ -49,13 +43,14 @@ h2 {
 }
 
 #menu::before {
-    content:"☰";
+    content: "☰";
 }
 
 #menu.open::before {
     content: "❌";
 }
 
+/* Navigation */
 .navigation {
     display: flex;
     flex-direction: column;
@@ -72,11 +67,36 @@ h2 {
     text-decoration: overline;
 }
 
+/* Main */
+h2 {
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 25px;
     place-items: center;
+}
+
+/* Temple Card */
+.temple-card {
+    margin: 0 auto;
+}
+
+.temple-card .details {
+    padding: 20px;
+}
+
+.temple-card .details .label {
+    font-weight: bold;
+}
+
+.temple-card img {
+    width: 100%;
+    height: 300px;
 }
 
 /* When the button is clicked */

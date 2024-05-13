@@ -29,14 +29,24 @@ function createTempleCard(filteredTemples) {
 		let templeName = document.createElement("h2");
 		templeName.textContent = temple.templeName;
 
+		// Create a div to group locaton, dedicated, and size information
+		let detailInfo = document.createElement("div");
+		detailInfo.classList.add("details")
+
+		// Create p elements for location, dedicated, and size
 		let templeLocation = document.createElement("p");
 		templeLocation.innerHTML = `<span class="label">Location: </span> ${temple.location}`;
 
 		let dedicatedDate = document.createElement("p");
-		dedicatedDate.textContent = "Dedicated: " + temple.dedicated;
+		dedicatedDate.innerHTML = `<span class="label">Dedicated: </span>${temple.dedicated}`
 
 		let area = document.createElement("p");
-		area.textContent = "Size: " + temple.area + "sq ft";
+		area.innerHTML = `<span class="label">Size: </span>${temple.area} sq ft`
+
+		// Append location, dedicated, and size p elements to the detailInfo div
+		detailInfo.appendChild(templeLocation);
+		detailInfo.appendChild(dedicatedDate);
+		detailInfo.appendChild(area);
 
 		// Create an img element for the temple image, set its attributes, and lazy load the image
 		let image = document.createElement("img");
@@ -46,9 +56,7 @@ function createTempleCard(filteredTemples) {
 
 		// Append all created elements to the temple card div
 		templeCard.appendChild(templeName);
-		templeCard.appendChild(templeLocation);
-		templeCard.appendChild(dedicatedDate);
-		templeCard.appendChild(area);
+		templeCard.appendChild(detailInfo);
 		templeCard.appendChild(image);
 
 		// Append the temple card div to the container element

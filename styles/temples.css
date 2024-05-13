@@ -1,4 +1,4 @@
-*  {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,7 +25,8 @@ header {
     padding: 20px;
 }
 
-header, main {
+header,
+main {
     margin: 0 auto;
 }
 
@@ -38,6 +39,7 @@ h2 {
     text-align: center;
     padding: 25px;
 }
+
 #menu {
     font-size: 2rem;
     font-weight: 700;
@@ -49,7 +51,7 @@ h2 {
 }
 
 #menu::before {
-    content:"☰";
+    content: "☰";
 }
 
 #menu.open::before {
