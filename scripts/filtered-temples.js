@@ -1,3 +1,5 @@
+document.cookie = "cookieName=cookieValue; SameSite=None; Secure";
+
 // Select the button element with the #menu and store it in the hamButton variable
 const hamButton = document.querySelector('#menu');
 
