@@ -34,12 +34,13 @@ h1 {
 .wf1 {
     max-width: 1000px;
 }
+
 .wf1 fieldset {
     margin: 2rem 0;
-    border: 1px solid #ad98b2;
+    border: 1px solid #cdb5d3;
     border-radius: 6px;
     padding: .5rem 25%;
-    background-color: #bdabc0;
+    background-color: #e3d0e6;
 }
 
 .wf1 label {
