@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review</title>
+    <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
+    <meta name="author" content="Sehee Jang">
+    <link rel="stylesheet" href="styles/form.css">
+
+    <script defer src="scripts/getdates.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Product Review</h1>
+        <form method="get" action="review.html" class="wf1">
+            <fieldset>
+
+                <!-- Product Name -->
+                <label>Product Name <span class="required">*</span>
+                    <select name="product" id="product" required>
+                        <option value="select">Please Select</option>
+                    </select>
+                </label>
+
+                <!-- Overall Rating-->
+                <label>Overall Rating <span class="required">*</span>
+                    <div class="overall-rating">
+                        <div class="rating">
+                            <label>
+                                &star;<br />
+                                <input type="radio" name="rating" value="1" required>
+                            </label>
+                        </div>
+                        <div class="rating">
+                            <label>
+                                &star;&star;<br />
+                                <input type="radio" name="rating" value="2" required>
+                            </label>
+                        </div>
+                        <div class="rating">
+                            <label>
+                                &star;&star;&star;<br />
+                                <input type="radio" name="rating" value="3" required>
+                            </label>
+                        </div>
+                        <div class="rating">
+                            <label>
+                                &star;&star;&star;&star;<br />
+                                <input type="radio" name="rating" value="4" required>
+                            </label>
+                        </div>
+                        <div class="rating">
+                            <label>
+                                &star;&star;&star;&star;&star;<br />
+                                <input type="radio" name="rating" value="5" required>
+                            </label>
+                        </div>
+
+                    </div>
+                </label>
+
+
+                <!-- Date of Installation -->
+                <label>Date of Installation <span class="required">*</span>
+                    <input type="date" name="date" id="date" required>
+                </label>
+
+                <!-- Useful Feature-->
+                <label>Which features did you find usefull in the product? <p class="italic">(Check all that
+                        apply)</p>
+                    <label><input type="checkbox" name="durability" id="durability" value="yes">
+                        Durability</label>
+                    <label><input type="checkbox" name="easy" id="easy" value="yes">
+                        Ease of Use</label>
+                    <label><input type="checkbox" name="performance" id="performance" value="yes">
+                        Performance</label>
+                    <label><input type="checkbox" name="design" id="design" value="yes">
+                        Design</label>
+                </label>
+
+                <!-- Written Review-->
+                <label>Written Review <span class="optional">(Optional)</span>
+                    <input type="text" name="review" id="review">
+                </label>
+
+                <!-- Your Name-->
+                <label>Your Name <span class="optional">(Optional)</span>
+                    <input type="text" name="name" id="name" autocomplete="name">
+                </label>
+
+                <!-- Button -->
+                <input type="submit" value="Post Review">
+            </fieldset>
+
+        </form>
+    </main>
+    <footer>
+        <p>&copy;<span class="currentyear"></span> Sehee Jang, South Korea</p>
+        <p id="lastModified">Last Modified: </p>
+    </footer>
+    <script defer src="scripts/form.js"></script>
+</body>
+
+</html>

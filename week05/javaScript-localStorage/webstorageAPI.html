@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage API - localStorage</title>
+</head>
+
+<body>
+    <main class="page">
+        <h2>Web Storage API - localStorage</h2>
+        <h3>Overview</h3>
+        <p>There are times when non-sensitive data storage would provide a better user experience and
+            offer some site performance improvements. The <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank"
+                rel="noopener">Web
+                Storage API</a> mechanisms provide the ability to store information in a
+            key-value format based upon a particular user agent or origin. In this activity, we discover
+            the purpose and scope of the <strong>localStorage</strong> mechanism available through the <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank"
+                rel="noopener">Storage</a>
+            interface. We will use this knowledge to drive
+            and display some traffic data from individual clients on a page.
+        </p>
+        <div class="callout info smaller">
+            <p>
+                The web storage data is actually saved in a SQLite file in a subfolder
+                or file in the user's profile folder.
+            </p>
+        </div>
+
+        <h3>Prepare</h3>
+        <p>Here are some comparison data between <strong>cookies</strong>,
+            <strong>localStorage</strong>, and <strong>sessionStorage</strong>.
+        </p>
+        <table>
+            <caption>Table 1: Local Storage Methods Comparison Chart</caption>
+            <tbody>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"><strong>Cookies</strong></th>
+                    <th scope="col"><strong>localStorage</strong></th>
+                    <th scope="col"><strong>sessionStorage</strong></th>
+                </tr>
+                <tr>
+                    <th scope="row"><strong>Capacity</strong></th>
+                    <td>~4KB</td>
+                    <td>~5MB</td>
+                    <td>~5MB</td>
+                </tr>
+                <tr>
+                    <th scope="row"><strong>Expires</strong></th>
+                    <td>Manually set</td>
+                    <td>Never</td>
+                    <td>On tab/windows close</td>
+                </tr>
+                <tr>
+                    <th scope="row"><strong>Accessible from</strong></th>
+                    <td>Any window</td>
+                    <td>Any Window</td>
+                    <td>Same tab</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Each of these methods stores data with the actual user agent (browser) client and not on the
+            server.</p>
+
+        <h4>localStorage Advantages</h4>
+        <ul>
+            <li>This method is much more intuitive than using the older method of Cookies.</li>
+            <li>Only stores strings in key-value pairs.</li>
+            <li>The mechanism's data persists without expiring and is available even when an agent is
+                closed and reopened again.</li>
+        </ul>
+
+        <div class="callout info">
+            <p>
+                You can store non-string data in localStorage. One common approach is to use the
+                <code>JSON.stringify()</code> method to convert the data to a string before storing it, and
+                then use the <code>JSON.parse()</code> method to convert it back to its original form when
+                you
+                retrieve it from localStorage. This allows you to store and retrieve more complex data
+                structures, such as objects and arrays, in localStorage.
+            </p>
+        </div>
+
+        <h4>localStorage Demonstration</h4>
+        <ul>
+            <li>Watch: <a href="https://video.byui.edu/media/t/1_z77p3i7c" target="_blank" rel="noopener">localStorage
+                    Demonstration</a> - Here is the corresponding <a
+                    href="https://codepen.io/blazzard-jason/pen/RwyePNj" target="_blank" rel="noopener">CodePen</a> used
+                in demonstration.
+                <div class="callout info smaller">
+                    <p>Fork (Copy) this Pen to your own CodePen account and play with the code.</p>
+                </div>
+            </li>
+        </ul>
+        <details>
+            <summary>What are some of the differences between session and local storage?</summary>
+            <p>One main difference is that localStorage data is persistent (remains) even
+                when the browser session expires. Session variables do not.</p>
+        </details>
+        <details>
+            <summary>Using the Storage interface, what are some methods built into this interface object and what do
+                they do?
+            </summary>
+            <p>Out of the entire method list [key(), getItem(), setItem(), removeItem(),
+                clear()] the most common are <strong>getItem</strong>() and <strong>setItem</strong>() which
+                you will be using in the assignments.<br>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank"
+                    rel="noopener">Storage
+                    Interface of the Web Storage API</a>
+            </p>
+        </details>
+
+        <h3>Activity Overview</h3>
+
+        <p>This activity revisits the favorite Book of Mormon chapters exercise.
+            The chapters entered by the user do not persist between visits to the application. In other
+            words, they are not stored anywhere. In this activity, we will use localStorage to store the
+            BOM chapter list for the user.</p>
+        <div class="callout info smaller">
+            <p>
+                The high level directions for this problem would be "<em>Enhance the favorite Book of Mormon
+                    chapters application so that the users entries persist between visits
+                    to the application using the localStorage API"</em>. Take on the challenge by first
+                thinking about
+                a solution to this problem and map it out on paper.
+            </p>
+        </div>
+        <p>The directed plan is to create an <strong>array</strong> of valid book and chapter entries
+            made by the user. Then that array could be stored in localStorage as one large string using
+            JSON string using <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify()</a>.
+            This means we need to load that array upon application load with the parsed data from
+            localStorage, <strong>IF</strong> the named localStorage component exists. Once loaded, we
+            need to populate the list with the stored values.</p>
+        <p>So instead of having two functions that do the same thing for the most part, we will create
+            a single function that appends the favorite chapter list with the corresponding delete button,
+            once on load, and also when a new entry is made.</p>
+
+        <h3>Activity Instructions</h3>
+        <div class="callout warning">Note that the given example code is just an example. You may have
+            used
+            different variable names, etc. You should never just copy code.</div>
+        <ol>
+            <li>Make a <strong>copy</strong> of your <strong>BOM</strong> application, by copying the
+                HTML, CSS, and JavaScript from the previous learning activity into a <strong>week05</strong>
+                folder.
+            </li>
+            <li>Open the JavaScript file. Declare an <strong>array</strong> named
+                <code>chaptersArray</code> and assign it to the results of a defined function named
+                <code>getChapterList</code> (<em>This function does not exist, yet</em>).
+            </li>
+            <li>In that same array variable declaration and assignment, add a compound OR condition to
+                assign it an empty array in case this is the user's first visit or if the localStorage item
+                is
+                missing.
+                <div class="callout info">This works because the function might not return anything, so it
+                    is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a> which means
+                    it will revert to assigning the empty array to <code>chaptersArray</code>.</div>
+                <details>
+                    <summary>Example</summary>
+                    <pre>        <code class="javascript hljs language-javascript"><span class="hljs-keyword">const</span> input = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'#favchap'</span>);
+    <span class="hljs-keyword">const</span> button = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'button'</span>);
+    <span class="hljs-keyword">const</span> list = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">'#list'</span>);
+    
+    <span class="hljs-keyword">let</span> chaptersArray = <span class="hljs-title function_">getChapterList</span>() || [];</code></pre>
+
+                    <div class="callout reference"><strong>Code Explanations</strong><br>
+                        <p>The first three lines establish references to the DOM elements that we will be using
+                            in
+                            the program. Note that they only reference the HTML element objects, not any
+                            properties.
+                        </p>
+                        <p>The array declaration initializes the chaptersArray variable with the list of
+                            chapters
+                            returned by the getChapterList() function <strong>or</strong> an empty array if the
+                            function call returns <strong>null</strong> or <strong>undefined</strong>.</p>
+                    </div>
+                </details>
+            </li>
+            <li>Now let's populate the displayed list of chapters. Use a <code>forEach</code> on the
+                <code>chaptersArray</code> to process each entry named <code>chapter</code>. Use an arrow
+                function within the loop to call a new defined function named <code>displayList</code> and
+                pass it the argument of <code>chapter</code>. That way each entry will be processed, i.e.,
+                appended to the list.
+                <details>
+                    <summary>Example</summary>
+                    <pre>              <code class="javascript hljs language-javascript">chaptersArray.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">chapter</span> =&gt;</span> {
+      <span class="hljs-title function_">displayList</span>(chapter);
+    });</code></pre>
+                </details>
+            </li>
+            <li>Change the button click event listener to only do the following tasks (the other tasks in
+                that original function will be used in a separate function named <code>displayList</code>):
+                <ol class="check">
+                    <li>check if the input is empty, if not, then</li>
+                    <li>call <code>displayList</code> with the <code>input.value</code> argument,</li>
+                    <li>push the <code>input.value</code> into the <code>chaptersArray</code>,</li>
+                    <li>update the localStorage with the new array by calling a function named
+                        <code>setChapterList</code>,
+                    </li>
+                    <li>set the <code>input.value</code> to nothing, and</li>
+                    <li>set the focus back to the input.</li>
+                </ol>
+                <details>
+                    <summary>Example with // code comments</summary>
+                    <pre>        <code class="javascript hljs language-javascript">button.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-keyword">if</span> (input.<span class="hljs-property">value</span> != <span class="hljs-string">''</span>) {  <span class="hljs-comment">// make sure the input is not empty</span>
+        <span class="hljs-title function_">displayList</span>(input.<span class="hljs-property">value</span>); <span class="hljs-comment">// call the function that outputs the submitted chapter</span>
+        chaptersArray.<span class="hljs-title function_">push</span>(input.<span class="hljs-property">value</span>);  <span class="hljs-comment">// add the chapter to the array</span>
+        <span class="hljs-title function_">setChapterList</span>(); <span class="hljs-comment">// update the localStorage with the new array</span>
+        input.<span class="hljs-property">value</span> = <span class="hljs-string">''</span>; <span class="hljs-comment">// clear the input</span>
+        input.<span class="hljs-title function_">focus</span>(); <span class="hljs-comment">// set the focus back to the input</span>
+      }
+    });</code></pre>
+                </details>
+            </li>
+            <li>Create the <code>displayList</code> defined function that receives one parameter named
+                <code>item</code>.
+            </li>
+            <li>Put all the code that builds a list item from the previous button click event listener
+                into this new <code>displayList</code> function and use the <code>item</code> parameter as
+                the input. A
+                <code>deleteChapter</code> function will need to be called within the delete button click
+                event to remove the chapter from the array and localStorage.
+                <details>
+                    <summary>Example: <code>displayList()</code></summary>
+                    <pre>        <code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">displayList</span>(<span class="hljs-params">item</span>) {
+      <span class="hljs-keyword">let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">'li'</span>);
+      <span class="hljs-keyword">let</span> deletebutton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">'button'</span>);
+      li.<span class="hljs-property">textContent</span> = item; <span class="hljs-comment">// note the use of the displayList parameter 'item'</span>
+      deletebutton.<span class="hljs-property">textContent</span> = <span class="hljs-string">'❌'</span>;
+      deletebutton.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">'delete'</span>); <span class="hljs-comment">// this references the CSS rule .delete{width:fit-content;} to size the delete button</span>
+      li.<span class="hljs-title function_">append</span>(deletebutton);
+      list.<span class="hljs-title function_">append</span>(li);
+      deletebutton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">'click'</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        list.<span class="hljs-title function_">removeChild</span>(li);
+        <span class="hljs-title function_">deleteChapter</span>(li.<span class="hljs-property">textContent</span>); <span class="hljs-comment">// note this new function that is needed to remove the chapter from the array and localStorage.</span>
+        input.<span class="hljs-title function_">focus</span>(); <span class="hljs-comment">// set the focus back to the input</span>
+      });
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'I like to copy code instead of typing it out myself and trying to understand it.'</span>);
+    }</code></pre>
+                </details>
+            </li>
+            <li>Define the <code>setChapterList</code> function to set the localStorage item that you have
+                already named. Use <code>JSON.stringify()</code> to stringify the array.
+                <details>
+                    <summary>Example: <code>setChapterList()</code></summary>
+                    <pre>              <code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">setChapterList</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(<span class="hljs-string">'myFavBOMList'</span>, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(chaptersArray));
+    }</code></pre>
+                </details>
+            </li>
+            <li>Define the <code>getChapterList</code> function to get the localStorage item. No parameter
+                is needed. Since this function returns to an awaiting array, we will need to use
+                <code>JSON.parse</code> on the string.
+                <details>
+                    <summary>Example: <code>getChapterList()</code></summary>
+                    <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getChapterList</span>(<span class="hljs-params"></span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">'myFavBOMList'</span>));
+    }</code></pre>
+                </details>
+            </li>
+            <li>Finally, define the <code>deleteChapter</code> function with a parameter named
+                <code>chapter</code> that does three things.
+                <ol class="check">
+                    <li>reformat the <code>chapter</code> parameter to get rid of the ❌ that is passed on the
+                        end of the chapter string when we called the deleteChapter function. Use <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice">string.slice()</a>
+                        method to extract the last character.
+                        <pre><code class="javascript hljs language-javascript">chapter = chapter.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, chapter.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>); <span class="hljs-comment">// this slices off the last character</span></code></pre>
+                    </li>
+                    <li>redefine the <code>chaptersArray</code> array using the <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+                            target="_blank" rel="noopener">array.filter</a> method to return
+                        everything except the chapter to be removed.
+                        <pre><code class="javascript hljs language-javascript">chaptersArray = chaptersArray.<span class="hljs-title function_">filter</span>(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> item !== chapter);</code></pre>
+                    </li>
+                    <li>Call the <code>setChapterList</code> function to update the localStorage item.</li>
+                </ol>
+                <details>
+                    <summary>Example: <code>deleteChapter()</code></summary>
+                    <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">deleteChapter</span>(<span class="hljs-params">chapter</span>) {
+      chapter = chapter.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, chapter.<span class="hljs-property">length</span> - <span class="hljs-number">1</span>);
+      chaptersArray = chaptersArray.<span class="hljs-title function_">filter</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item !== chapter);
+      <span class="hljs-title function_">setChapterList</span>();
+    }</code></pre>
+                </details>
+            </li>
+        </ol>
+
+        <h3>Testing</h3>
+        <p>Test the application by adding and removing chapters. Hard refresh and empty the cache the
+            page and see if the
+            chapters persist. You can also erase all application localStorage content under the
+            <strong>Applications</strong> tab in DevTools.
+        </p>
+
+        <div class="callout reference smaller">
+            <h4>Additional Resources</h4>
+            <ol>
+                <li>Video: <a href="https://youtu.be/GihQAC1I39Q?si=M_OwWHklCjK3mNfy" target="_blank"
+                        rel="noopener">JavaScript Cookies vs localStorage vs Session Storage</a> - Web Dev Simplified
+                </li>
+                <li>A dynamic structured approach to this activity would be to use <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set"
+                        target="_blank" rel="noopener">Set object</a> in JavaScript. <strong>Set</strong> allows us to
+                    <strong>add</strong> and <strong>delete</strong> items from the Set object as needed.
+                </li>
+                <li>Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API"
+                        target="_blank" rel="noopener">Web Storage API</a> - MDN</li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank"
+                        rel="noopener">IndexedDB API</a> is a more robust method of storing data
+                    on the client
+                    side and is more like a database.</li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Cache" target="_blank"
+                        rel="noopener">Cache
+                        API</a> is a method of storing data that is
+                    specifically used for caching data for offline use.</li>
+
+            </ol>
+        </div>
+
+        <hr>
+        <nav>
+            <span><a href="index.html">Back</a></span>
+        </nav>
+
+    </main>
+</body>
+
+</html>

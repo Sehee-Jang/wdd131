@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback Functions</title>
+</head>
+
+<body>
+    <main class="page">
+        <h2>Callback Functions</h2>
+        <h3>Overview</h3>
+        <p>
+            Callback functions are a powerful feature of JavaScript. They are used extensively in the
+            JavaScript language and in the browser. Callback functions are used to handle events, to
+            process data, and to control the flow of a program.
+        </p>
+        <div class="callout info">
+            "A callback function is a function passed into another function as an argument, which is then
+            invoked inside the outer function to complete some kind of routine or action." - <a
+                href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function" target="_blank"
+                rel="noopener">MDN
+                Web Docs</a>
+        </div>
+
+        <details class="clo">
+            <summary><strong>Course Learning Outcomes</strong></summary>
+            <ol>
+                <li>Demonstrate proficiency with JavaScript language syntax.</li>
+                <li>Use JavaScript to respond to events and dynamically modify HTML.</li>
+            </ol>
+        </details>
+
+        <h3>Prepare</h3>
+        <ul>
+            <li>Reference <a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function" target="_blank"
+                    rel="noopener">Callback Functions</a> - MDN web docs</li>
+            <li>Ponder this article demonstrating the use of callback functions: <a
+                    href="https://blog.devgenius.io/array-callback-methods-arrow-functions-9ecbd728f63" target="_blank"
+                    rel="noopener">Callback
+                    with built-in functions</a> - devgenius.io</li>
+        </ul>
+
+        <h3>Activity Instructions</h3>
+
+        <p>Given these function declarations:</p>
+        <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">calculate</span>(<span class="hljs-params">a, b, callback</span>) {
+      <span class="hljs-title function_">callback</span>(a + b);
+    }
+    
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">displayResult</span>(<span class="hljs-params">result</span>) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">'The result is: '</span> + result);
+    }</code></pre>
+
+        <ul>
+            <li>Call a function named <code>calculate</code> and pass it the arguments to support the
+                console output of the following equation: <code>2 + 3</code>. You need to pass
+                <strong>three</strong> arguments to the <code>calculate</code> function.
+                <details>
+                    <summary>Check Your Understanding</summary>
+                    <pre><code class="javascript hljs language-javascript"><span class="hljs-title function_">calculate</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, displayResult)</code></pre>
+                </details>
+            </li>
+        </ul>
+
+        <p>A common example of a callback function is in JavaScript, particularly in asynchronous
+            operations
+            such as handling events or making async requests. Here is a simulated example:</p>
+        <pre><code class="javascript hljs language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchData</span>(<span class="hljs-params">callback</span>) {
+      <span class="hljs-comment">// using setTimeout to simulate fetching data from a server</span>
+      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-comment">// This calls the 'callback' function and passes data to it.</span>
+        <span class="hljs-title function_">callback</span>(<span class="hljs-string">'Data has been fetched'</span>);
+      }, <span class="hljs-number">2000</span>); <span class="hljs-comment">// This simulates a 2-second delay from a service.</span>
+    }
+    
+    <span class="hljs-comment">// function that processes the data</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">processData</span>(<span class="hljs-params">data</span>) {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Data received:"</span>, data);
+    }
+    
+    <span class="hljs-comment">// Call the fetchData function and pass the processData function as an argument.</span>
+    <span class="hljs-title function_">fetchData</span>(processData);</code></pre>
+        <p>Consider the following statements about the example above:</p>
+        <ul>
+            <li>fetchData is a function that simulates fetching data asynchronously, like making an async
+                request.</li>
+            <li>It takes a callback function (callback) as an argument.</li>
+            <li>processData is a callback function that handles the data received from the fetchData
+                function. It simply logs to the console in the example.</li>
+            <li>fetchData is called and passed the callback function ('fetchData') as an argument.</li>
+        </ul>
+        <ul>
+            <li>Which of the following statements is true about the fetchData function in the provided JavaScript
+                example?
+                <details>
+                    <summary>Check Your Understanding</summary>
+                    It utilizes setTimeout to simulate asynchronous data fetching.
+                </details>
+            </li>
+            <li>What role does the processData function play in the example code?
+                <details>
+                    <summary>Check Your Understanding</summary>
+                    It processes the data received from the fetchData function.
+                </details>
+            </li>
+        </ul>
+
+        <hr>
+        <nav>
+            <span><a href="index.html">Back</a></span>
+        </nav>
+    </main>
+</body>
+
+</html>
