@@ -57,6 +57,12 @@ h1 {
     text-align: center;
 }
 
+.wf1 .overall-rating .rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .wf1 .overall-rating input[type="radio"] {
     cursor: pointer;
 }

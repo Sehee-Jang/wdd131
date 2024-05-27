@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #4a0d56;
+    --required: #78220f;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+#reviewCounter {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+footer {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
