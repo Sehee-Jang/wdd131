@@ -7,40 +7,74 @@
     <title>FitLifeHub</title>
     <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
     <meta name="author" content="Sehee Jang">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
     <header>
-        <img src="images/logo.png" alt="FitLifeHub Logo" class="logo">
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo1.png" alt="FitLifeHub Logo" class="logo"></a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle"></button>
+
+            <ul class="navigation" id="navigation">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="workouts.html">Workouts</a></li>
                 <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Welcome to FitLifeHub</h1>
-            <p>Your ultimate resource for fitness routines, nutrition advice, and community support.</p>
+            <div class="hero-content">
+                <h1>Welcome to FitLifeHub</h1>
+                <p>Your ultimate resource for fitness routines, nutrition advice, and community support.</p>
+            </div>
+            <picture>
+                <source srcset="images/hero-large.webp" media="min-width: 1000px">
+                <source srcset="images/hero-medium.webp" media="min-width: 550px">
+                <img src="images/hero-small.webp" alt="Person in Gray Shirt Holding Black Dumbbell" loading="lazy"
+                    width="400" height="200">
+            </picture>
         </section>
 
         <section class="features">
             <div class="feature">
-                <h2>Workout Routines</h2>
-                <p>Find the best workout routines tailored to your fitness level.</p>
+                <div class="feature-content">
+                    <h2>Workout Routines</h2>
+                    <p>Find the best workout routines tailored to your fitness level.</p>
+                    <a href="workouts.html" class="yellow-btn">LEARN MORE</a>
+                </div>
+                <div class="image-container">
+                    <img src="images/feature1.webp" alt="A woman doing exercise" loading="lazy">
+                </div>
+
             </div>
             <div class="feature">
-                <h2>Nutrition Tips</h2>
-                <p>Discover healthy recipes and nutrition tips to support your fitness goals.</p>
+                <div class="feature-content">
+                    <h2>Nutrition Tips</h2>
+                    <p>Discover healthy recipes and nutrition tips to support your fitness goals.</p>
+
+                    <a href="workouts.html" class="yellow-btn">LEARN MORE</a>
+                </div>
+                <div class="image-container">
+                    <img src="images/feature2.webp" alt="Sandwich with boiledegg" loading="lazy">
+                </div>
             </div>
             <div class="feature">
-                <h2>Community Support</h2>
-                <p>Join our community forum to share experiences and stay motivated.</p>
+                <div class="feature-content">
+                    <h2>Community Support</h2>
+                    <p>Join our community forum to share experiences and stay motivated.</p>
+                    <a href="workouts.html" class="yellow-btn">LEARN MORE</a>
+                </div>
+                <div class="image-container">
+                    <img src="images/feature3.webp" alt="Women sitting on red carpet" loading="lazy">
+                </div>
             </div>
         </section>
     </main>
@@ -50,7 +84,7 @@
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/scripts.js"></script>
 </body>
 
 </html>
