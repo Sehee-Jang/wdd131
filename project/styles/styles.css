@@ -10,6 +10,12 @@
     /* Light Gray */
     --white-color: #fff;
     /* White */
+    --footer-bg-color: #002C3E;
+    /* Dark Blue */
+    --link-color: #00B1E1;
+    /* Blue */
+    --link-hover-color: #FFDC1A;
+    /* Yellow */
 }
 
 *,
@@ -240,8 +246,17 @@ header {
 footer {
     text-align: center;
     padding: 2em 0;
-    background-color: var(--primary-color);
+    background-color: var(--footer-bg-color);
     color: var(--white-color);
+}
+
+footer a {
+    color: var(--footer-text-color);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: var(--link-hover-color);
 }
 
 /* Responsive styling */
