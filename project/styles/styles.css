@@ -56,7 +56,7 @@ header {
     max-width: 150px;
 }
 
-/* BUTTON */
+/* MENU BUTTON */
 .menu-toggle {
     /* display: block; */
     cursor: pointer;
@@ -97,6 +97,10 @@ header {
     background-color: var(--background-color);
     color: #333;
     font-weight: 700;
+}
+
+.navigation .active {
+    font-weight: bold;
 }
 
 .open a {
