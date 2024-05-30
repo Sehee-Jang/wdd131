@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
+<body class="nutrition-page">
     <header>
         <nav class="navbar">
             <div class="logo-container">
@@ -20,25 +20,57 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="Menu toggle"></button>
 
             <ul class="navigation" id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="about.html">About</a></li> -->
-                <li><a href="workouts.html">Workouts</a></li>
-                <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="workouts.html">Workouts</a></li>
+                <li class="nav-item"><a href="nutrition.html">Nutrition</a></li>
+                <li class="nav-item"><a href="community.html">Community</a></li>
+                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="section-title">
+            <h1>Discover Healthy Recipes and Nutrition Tips</h1>
+            <p>Find the best recipes and nutrition advice tailored to support your fitness goals.</p>
+        </section>
 
+        <section class="filters">
+            <form id="nutritionForm">
+                <label for="dietType">Diet Type:
+                    <select id="dietType">
+                        <option value="All">All</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Gluten-Free">Gluten-Free</option>
+                        <option value="Keto">Keto</option>
+                    </select>
+                </label>
+
+                <label for="mealType">Meal Type:
+                    <select id="mealType">
+                        <option value="All">All</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Snack">Snack</option>
+                    </select>
+                </label>
+
+                <button id="applyFilters">Apply Filters</button>
+            </form>
+        </section>
+
+        <section id="recipeList">
+            <!-- Recipes will be displayed here -->
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2024 FitLifeHub. All rights reserved.</p>
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
-
+    <script src="scripts/nutrition.js"></script>
     <script src="scripts/scripts.js"></script>
 </body>
 

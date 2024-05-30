@@ -8,9 +8,10 @@
     <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
     <meta name="author" content="Sehee Jang">
     <link rel="stylesheet" href="styles/styles.css">
+    <!-- <link rel="stylesheet" href="styles/workout.css"> -->
 </head>
 
-<body>
+<body class="workout-page">
     <header>
         <nav class="navbar">
             <div class="logo-container">
@@ -20,18 +21,67 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="Menu toggle"></button>
 
             <ul class="navigation" id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="about.html">About</a></li> -->
-                <li><a href="workouts.html">Workouts</a></li>
-                <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="workouts.html">Workouts</a></li>
+                <li class="nav-item"><a href="nutrition.html">Nutrition</a></li>
+                <li class="nav-item"><a href="community.html">Community</a></li>
+                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="section-title">
+            <h1>WORKOUT CATEGORIES</h1>
+            <p>Choose a category that best suits the workout you're searching for. Once in the category, use the sort
+                and filter options to find the right workout for your experience and goals.</p>
+        </section>
 
+        <section class="filters">
+            <form id="workoutForm">
+                <label for="skillLevel">Skill Level:
+                    <select id="skillLevel">
+                        <option value="All">All</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </label>
+
+                <label for="exerciseType">Exercise Type:
+                    <select id="exerciseType">
+                        <option value="All">All</option>
+                        <option value="Strength Training">Strength Training</option>
+                        <option value="Cardio">Cardio</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="HIIT">HIIT</option>
+                        <option value="Flexibility">Flexibility</option>
+                        <option value="Functional">Functional</option>
+                        <option value="Plyometrics">Plyometrics</option>
+                    </select>
+                </label>
+
+                <label for="target">Target:
+                    <select id="target">
+                        <option value="All">All</option>
+                        <option value="Legs">Legs</option>
+                        <option value="Glutes">Glutes</option>
+                        <option value="Whole Body">Whole Body</option>
+                        <option value="Chest">Chest</option>
+                        <option value="Back">Back</option>
+                        <option value="Arms">Arms</option>
+                        <option value="Abs">Abs</option>
+                        <option value="Obliques">Obliques</option>
+
+                    </select>
+                </label>
+                <button id="applyFilters">Apply Filters</button>
+            </form>
+        </section>
+
+        <section id="workoutList">
+            <!-- Workout categories will be displayed here -->
+        </section>
     </main>
 
     <footer>
@@ -39,6 +89,7 @@
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
 
+    <script src="scripts/workout.js"></script>
     <script src="scripts/scripts.js"></script>
 </body>
 

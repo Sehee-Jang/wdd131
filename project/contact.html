@@ -8,9 +8,10 @@
     <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
     <meta name="author" content="Sehee Jang">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
 </head>
 
-<body>
+<body class="contact-page">
     <header>
         <nav class="navbar">
             <div class="logo-container">
@@ -20,18 +21,35 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="Menu toggle"></button>
 
             <ul class="navigation" id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="about.html">About</a></li> -->
-                <li><a href="workouts.html">Workouts</a></li>
-                <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="workouts.html">Workouts</a></li>
+                <li class="nav-item"><a href="nutrition.html">Nutrition</a></li>
+                <li class="nav-item"><a href="community.html">Community</a></li>
+                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="contact-form-section">
+            <h1>Contact Us</h1>
+            <form id="contactForm">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
 
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div id="messageDisplay" style="display: none;"></div>
+        </section>
     </main>
 
     <footer>
@@ -39,6 +57,7 @@
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
 
+    <script src="scripts/contact.js"></script>
     <script src="scripts/scripts.js"></script>
 </body>
 

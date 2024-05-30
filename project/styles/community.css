@@ -1,0 +1,52 @@
+form#postForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#postForm label {
+    font-weight: bold;
+}
+
+form#postForm input,
+form#postForm textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#communityPosts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.post-item {
+    background-color: white;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.post-item h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.post-item p {
+    margin: 0.5rem 0;
+}
+
+.post-item .timestamp {
+    font-size: 0.875rem;
+    color: #888;
+}

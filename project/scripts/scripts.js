@@ -1,4 +1,4 @@
-// ADD OPEN CLASS
+// Menu Button Handling
 const hamButton = document.querySelector('#menu-toggle');
 const navigation = document.querySelector('.navigation');
 
@@ -7,20 +7,21 @@ hamButton.addEventListener('click', () => {
     hamButton.classList.toggle('open');
 });
 
-// ADD ACTIVE CLASS TO THE NAV WHEN CLICKED 
-document.addEventListener('DOMContentLoaded', function () {
-    const navigationLinks = document.querySelectorAll('.navigation a');
+// Active Link Handling
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all the nav items
+    const navItems = document.querySelectorAll('#navigation .nav-item a');
 
-    navigationLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const currentActive = document.querySelector('.navigation a.active');
-            if (currentActive) {
-                currentActive.classList.remove('active');
-            }
-            link.classList.add('active');
-            console.log('Link clicked');
+    // Remove active class from all items and add to the current one
+    navItems.forEach(item => {
+        item.addEventListener('click', function () {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
         });
+
+        // If the current URL matches the href, set it as active
+        if (item.href === window.location.href) {
+            item.classList.add('active');
+        }
     });
 });
-

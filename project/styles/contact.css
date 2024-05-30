@@ -1,0 +1,45 @@
+/* Contact Form Styles */
+.contact-form-section {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.contact-form-section h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#messageDisplay {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    word-wrap: break-word;
+    /* Ensure long words break to the next line */
+    overflow-wrap: break-word;
+    /* Ensure overflow words break */
+    white-space: pre-wrap;
+    /* Preserve whitespace, wrap when necessary */
+}

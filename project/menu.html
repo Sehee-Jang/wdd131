@@ -1,0 +1,78 @@
+<!-- Index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+    <title>Active Navbar</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="nav-item" id="home">
+                <a href="#">Home</a>
+            </li>
+            <li class="nav-item" id="about">
+                <a href="#">About</a>
+            </li>
+            <li class="nav-item" id="services">
+                <a href="#">Services</a>
+            </li>
+            <li class="nav-item" id="contact">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <script src="scripts/active.js"></script>
+
+    <style>
+        /* styles.css */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .nav-item {
+            float: left;
+        }
+
+        .nav-item a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            background-color: #4CAF50;
+        }
+    </style>
+</body>
+
+</html>

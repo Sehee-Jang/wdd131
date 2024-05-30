@@ -8,9 +8,10 @@
     <meta name="description" content="WDD131 - Dynamic Web Fundamentals">
     <meta name="author" content="Sehee Jang">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/community.css">
 </head>
 
-<body>
+<body class="community-page">
     <header>
         <nav class="navbar">
             <div class="logo-container">
@@ -20,18 +21,36 @@
             <button class="menu-toggle" id="menu-toggle" aria-label="Menu toggle"></button>
 
             <ul class="navigation" id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <!-- <li><a href="about.html">About</a></li> -->
-                <li><a href="workouts.html">Workouts</a></li>
-                <li><a href="nutrition.html">Nutrition</a></li>
-                <li><a href="community.html">Community</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="workouts.html">Workouts</a></li>
+                <li class="nav-item"><a href="nutrition.html">Nutrition</a></li>
+                <li class="nav-item"><a href="community.html">Community</a></li>
+                <li class="nav-item"><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="section-title">
+            <h1>Community Forum</h1>
+            <p>Share your experiences and stay motivated by connecting with our community.</p>
+        </section>
 
+        <section>
+            <form id="postForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Post</button>
+            </form>
+        </section>
+
+        <section id="communityPosts">
+            <!-- User posts will be displayed here -->
+        </section>
     </main>
 
     <footer>
@@ -39,6 +58,7 @@
         <p><a href="attributions.html">Attributions</a></p>
     </footer>
 
+    <script src="scripts/community.js"></script>
     <script src="scripts/scripts.js"></script>
 </body>
 
