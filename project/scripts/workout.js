@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display filtered workouts
     function displayWorkouts(workouts) {
         workoutList.innerHTML = '';
+        const fragment = document.createDocumentFragment();
         workouts.forEach(workout => {
             const workoutItem = document.createElement('div');
             workoutItem.classList.add('workout-item');
@@ -105,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><span class="bold">Exercise Type:</span> ${workout.exerciseType}</p>
                 <p><span class="bold">Target:</span> ${workout.target.join(', ')}</p>
             `;
-            workoutList.appendChild(workoutItem);
+            fragment.appendChild(workoutItem);
         });
+        workoutList.appendChild(fragment);
     }
 
     // Initial display of all workouts
