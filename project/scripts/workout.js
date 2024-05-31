@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const workoutItem = document.createElement('div');
             workoutItem.classList.add('workout-item');
             workoutItem.innerHTML = `
-                <h3>${workout.name}</h3>
+                <h2>${workout.name}</h2>
                 <p><span class="bold">Skill Level:</span> ${workout.skillLevel}</p>
                 <p><span class="bold">Exercise Type:</span> ${workout.exerciseType}</p>
                 <p><span class="bold">Target:</span> ${workout.target.join(', ')}</p>

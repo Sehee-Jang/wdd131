@@ -289,6 +289,15 @@
      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
  }
 
+ .workout-item h2,
+ .recipe-item h2 {
+     font-size: 20px;
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     border-bottom: 3px solid var(--link-color);
+ }
+
+
  .workout-item h3,
  .recipe-item h3 {
      margin-bottom: 10px;

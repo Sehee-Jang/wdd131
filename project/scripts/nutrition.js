@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const recipeItem = document.createElement('div');
             recipeItem.classList.add('recipe-item');
             recipeItem.innerHTML = `
-                <h3>${recipe.name}</h3>
+                <h2>${recipe.name}</h2>
                 <p><span class="bold">Diet Type:</span> ${recipe.dietType}</p>
                 <p><span class="bold">Meal Type:</span> ${recipe.mealType}</p>
                 <p><span class="bold">Ingredients:</span> ${recipe.ingredients.join(', ')}</p>
